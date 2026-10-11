@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MThDownloader 下载面板</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 24px;
+      font: 14px/1.6 "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: #f5f6f8; color: #1f2329;
+    }
+    header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    header img { width: 32px; height: 32px; }
+    header h1 { font-size: 20px; margin: 0; flex: 1; }
+    header .meta { color: #6b7280; font-size: 12px; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+    .dot.on { background: #23a55a; } .dot.off { background: #e5484d; }
+    .empty {
+      background: #fff; border: 1px dashed #d0d5dd; border-radius: 10px;
+      padding: 48px 24px; text-align: center; color: #6b7280;
+    }
+    .item {
+      background: #fff; border: 1px solid #e4e7ec; border-radius: 10px;
+      padding: 14px 18px; margin-bottom: 10px;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 4px 16px;
+      align-items: center;
+    }
+    .badge {
+      grid-row: span 2;
+      font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+    }
+    .badge.run  { background: #e0edff; color: #175cd3; }
+    .badge.done { background: #dcfae6; color: #087443; }
+    .badge.fail { background: #fee4e2; color: #b42318; }
+    .badge.stop { background: #eceef1; color: #4b5563; }
+    .name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sub  { grid-column: 2 / 4; color: #6b7280; font-size: 12px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sub .copy { color: #175cd3; cursor: pointer; margin-left: 8px; }
+    .sub .copy:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="">
+    <h1>MThDownloader 下载面板</h1>
+    <span class="meta" id="bridge"><span class="dot off"></span>检测本地桥…</span>
+  </header>
+  <div id="list"><div class="empty">正在加载…</div></div>
+  <script src="panel.js"></script>
+</body>
+</html>

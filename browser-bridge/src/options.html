@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MThDownloader 下载桥接</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" width="32" height="32" alt="">
+    <h1>MThDownloader 下载桥接</h1>
+  </header>
+
+  <section class="card">
+    <label class="row">
+      <span class="label">拦截浏览器下载</span>
+      <input type="checkbox" id="enabled">
+    </label>
+    <p class="hint">开启后，浏览器产生的下载会立即被取消，并把下载地址交给本机 MThDownloader.exe。</p>
+  </section>
+
+  <section class="card">
+    <label class="col">
+      <span class="label">仅拦截这些扩展名（逗号分隔，留空 = 全部）</span>
+      <input type="text" id="extFilter" placeholder="例如：zip, rar, 7z, iso, exe, apk, mp4, mkv">
+    </label>
+    <p class="hint">填写后，只有匹配的下载才会转发，其余仍由浏览器自带下载。</p>
+  </section>
+
+  <section class="card">
+    <label class="row">
+      <span class="label">桥接失败时回退为浏览器下载</span>
+      <input type="checkbox" id="fallbackToBrowser">
+    </label>
+    <label class="row">
+      <span class="label">在浏览器下载历史保留记录</span>
+      <input type="checkbox" id="keepHistory">
+    </label>
+    <p class="hint">开启后，每次转发都会在下载历史留一条记录（显示原始地址，可点重试再次转发）。Chrome 不支持显示为“已完成”。</p>
+  </section>
+
+  <section class="card">
+    <label class="col">
+      <span class="label">MThDownloader.exe 完整路径</span>
+      <input type="text" id="exePath" placeholder="例如：C:\Tools\MThDownloader.exe">
+    </label>
+    <p class="hint">本地桥用这个路径启动下载器；保存后写入宿主目录的 bridge_config.json。</p>
+    <button id="savePath" type="button">保存路径</button>
+    <div id="pathStatus" class="status">未修改</div>
+  </section>
+
+  <section class="card">
+    <button id="openPanel" type="button">打开下载面板</button>
+    <button id="test" type="button">测试本地桥连接</button>
+    <div id="status" class="status">尚未测试</div>
+  </section>
+
+  <footer>
+    <p>宿主：<code>com.mthdownloader.bridge</code> · 原生消息经本机 stdio 转发，不经过网络。</p>
+  </footer>
+
+  <script src="options.js"></script>
+</body>
+</html>

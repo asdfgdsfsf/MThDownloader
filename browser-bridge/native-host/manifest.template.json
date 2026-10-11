@@ -1,0 +1,9 @@
+{
+  "name": "com.mthdownloader.bridge",
+  "description": "MThDownloader 浏览器下载桥接宿主",
+  "path": "{{HOST_ABS_PATH}}",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://{{EXTENSION_ID}}/"
+  ]
+}

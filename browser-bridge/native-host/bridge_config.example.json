@@ -1,0 +1,6 @@
+{
+  "executable": "C:\path\to\MThDownloader.exe",
+  "args_template": ["{url}"],
+  "allowed_schemes": ["http", "https", "magnet"],
+  "max_url_length": 8192
+}

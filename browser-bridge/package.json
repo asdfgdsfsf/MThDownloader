@@ -1,0 +1,12 @@
+{
+  "name": "mth-browser-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Chrome/Edge extension + native messaging bridge that forwards browser downloads to MThDownloader.exe",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node --check src/background.js && node --check src/options.js && node --check build.js",
+    "test": "node test/validate.js && python test/host_protocol_test.py"
+  }
+}
